@@ -18,16 +18,18 @@ class List extends Component{
         let _listArray = [];
         const addToList = varListData.tareas.forEach(
             ( value, index ) => (
-                _listArray.push( <li key={ index }>{ value }</li> )
+                _listArray.push( <li className="list-group-item" key={ index } onClick={ function () {
+                    varListData.deleteItem( index )
+                } } >{ value }</li> )
             )
         );
         return(
-            <div>
+            <div className="container">
                 <h2>Lista de tareasss</h2>
                 <input type="text" onKeyPress={ this.sendTarea.bind( this ) }/>
-                <div>
-                    <div>
-                        <ul>
+                <div className="row ">
+                    <div className="col-sm-12">
+                        <ul className="list-group">
                             { _listArray }
                         </ul>
                     </div>

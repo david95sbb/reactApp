@@ -14,6 +14,10 @@ class ListData{
     addItem( item ){
         this.tareas.push( item );
     }
+
+    deleteItem( index ){
+        this.tareas.splice( index,1 );
+    }
 }
 
 var varListData = new ListData;
